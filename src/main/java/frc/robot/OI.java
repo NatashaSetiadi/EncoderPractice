@@ -7,8 +7,6 @@ import frc.robot.commands.WheelArmCommand;
 import frc.robot.controls.XboxController1;
 import frc.robot.controls.XboxController2;
 
-
-
 public class OI {
 
     public XboxController1 controller1;
@@ -16,25 +14,35 @@ public class OI {
     DriveTrigger driveTrigger;
     GrabberTrigger grabberTrigger;
     ElevatorTrigger elevatorTrigger;
-    public OI(){
+
+    public OI() {
         this.controller1 = new XboxController1(RobotMap.XBOX_CONTROLLER_1_PORT);
         this.controller2 = new XboxController2(RobotMap.XBOX_CONTROLLER_2_PORT);
     }
-    public void setTriggers(){
+
+    public void setTriggers() {
         this.driveTrigger.whileActive(new DirectDriveCommand());
         this.grabberTrigger.whileActive(new WheelArmCommand());
         this.elevatorTrigger.whenActive(new ElevatorPositionCommand());
 
     }
 
-	class DriveTrigger extends Trigger {
-		public boolean get() { return (Robot.oi.controller1.getDrive() != 0 || Robot.oi.controller1.getTurn() != 0); }
+    class DriveTrigger extends Trigger {
+        public boolean get() {
+            return (Robot.oi.controller1.getDrive() != 0 || Robot.oi.controller1.getTurn() != 0);
+        }
     }
-    class GrabberTrigger extends Trigger{
-        public boolean get(){ return (Robot.oi.controller2.getArm() != 0);}
+
+    class GrabberTrigger extends Trigger {
+        public boolean get() {
+            return (Robot.oi.controller2.getArm() != 0);
+        }
     }
-    class ElevatorTrigger extends Trigger{
-        public boolean get() { return Robot.oi.controller2.getElevator(); }
+
+    class ElevatorTrigger extends Trigger {
+        public boolean get() {
+            return Robot.oi.controller2.getElevator();
+        }
 
     }
 
