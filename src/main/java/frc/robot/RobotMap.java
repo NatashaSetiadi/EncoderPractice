@@ -22,24 +22,20 @@ import edu.wpi.first.wpilibj.drive.Vector2d;
  */
 public class RobotMap {
 
-	public static final int LEFT_FRONT_DRIVE_TALON_PORT  = 6;
-	public static final int LEFT_BACK_DRIVE_TALON_PORT   = 7;
+	public static final int LEFT_FRONT_DRIVE_TALON_PORT = 6;
+	public static final int LEFT_BACK_DRIVE_TALON_PORT = 7;
 	public static final int RIGHT_FRONT_DRIVE_TALON_PORT = 1;
-	public static final int RIGHT_BACK_DRIVE_TALON_PORT  = 3;
+	public static final int RIGHT_BACK_DRIVE_TALON_PORT = 3;
 	public static final int GRABBER_TALON_PORT = 8;
 	public static final int XBOX_CONTROLLER_1_PORT = 0;
-    public static final int XBOX_CONTROLLER_2_PORT = 1;
+	public static final int XBOX_CONTROLLER_2_PORT = 1;
 
+	public final static double deadzone = .18;
+	public final static double TRACKWIDTH = 30; // distance from the centers of the wheels width wise
+	public final static double WHEELBASE = 30; // distance between the centers of the wheels length wise
 
-	public final static double deadzone = .18; 
-	public final static double TRACKWIDTH = 30; //distance from the centers of the wheels width wise 
-    public final static double WHEELBASE = 30; //distance between the centers of the wheels length wise 
-	
-	//save vector length (magnitude of the vector of the chassis) to a double value
+	// save vector length (magnitude of the vector of the chassis) to a double value
 	public final static Vector2d chassisVector = new Vector2d(TRACKWIDTH, WHEELBASE);
-    public final static double chassisMagnitude = chassisVector.magnitude();
-
-	
-
+	public final static double chassisMagnitude = chassisVector.magnitude();
 
 }
